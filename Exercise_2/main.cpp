@@ -11,18 +11,18 @@
 #include <numeric>
 #include <map>
 
-template<typename T, typename U>
-constexpr unsigned int GCD2(T a, U b){
+
+constexpr int GCD2(int a, int b){
 	return std::gcd(a,b);
 
 }
 template<typename T, typename U, typename...V>
-constexpr unsigned int GCD2(T a, U b, V...c){
+constexpr int GCD2(T a, U b, V...c){
 	return GCD2(a,GCD2(b,c...));
 
 }
 
-constexpr unsigned int GCD(int pa, int pb){
+constexpr int GCD(int pa, int pb){
 	unsigned int a = abs(pa), b = abs(pb);
 	unsigned int gcd = 1;
 	unsigned int div = 0;
